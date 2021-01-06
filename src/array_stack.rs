@@ -38,6 +38,9 @@ impl<T> ArrayStack<T> {
     }
 
     pub fn remove(&mut self, i: usize) -> Option<T> {
+        if self.n == 0 {
+            return None;
+        }
         let x = self.a[i].take();
         self.a[i..self.n].rotate_left(1);
         self.n -= 1;
@@ -45,6 +48,10 @@ impl<T> ArrayStack<T> {
             self.resize();
         }
         x
+    }
+
+    pub fn size(&self) -> usize {
+        self.n
     }
 
     fn resize(&mut self) {
