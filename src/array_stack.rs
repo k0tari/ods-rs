@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct ArrayStack<T> {
     a: Box<[Option<T>]>,
     n: usize,

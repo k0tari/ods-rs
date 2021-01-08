@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct ArrayDeque<T> {
     a: Box<[T]>,
     j: usize,

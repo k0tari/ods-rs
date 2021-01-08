@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct ArrayQueue<T> {
     a: Box<[T]>,
     j: usize,
