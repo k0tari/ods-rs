@@ -20,6 +20,14 @@ impl<T> ArrayStack<T> {
         }
     }
 
+    pub fn get_mut(&mut self, i: usize) -> Option<&mut T> {
+        if i < self.n {
+            self.a[i].as_mut()
+        } else {
+            None
+        }
+    }
+
     pub fn set(&mut self, i: usize, x: T) -> Option<T> {
         if i < self.n {
             self.a[i].replace(x)
